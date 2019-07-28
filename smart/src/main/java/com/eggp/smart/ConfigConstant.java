@@ -15,5 +15,7 @@ public interface ConfigConstant {
     String APP_JSP_PATH="smart.app.jsp_path";
     String APP_ASSET_PATH="smart.app.asset_path";
 
+    String APP_UPLOAD_LIMIT="com.eggp.smart.app.upload_limit";
+
 
 }

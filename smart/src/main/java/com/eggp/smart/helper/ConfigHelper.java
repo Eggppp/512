@@ -39,4 +39,8 @@ public final class ConfigHelper {
         return PropertiesUtil.getString(CONFIG_PROPS,ConfigConstant.APP_ASSET_PATH);
     }
 
+    public static int getAppUploadLimit(){
+        return PropertiesUtil.getInt(CONFIG_PROPS,ConfigConstant.APP_UPLOAD_LIMIT,10);
+    }
+
 }

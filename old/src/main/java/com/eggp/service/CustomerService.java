@@ -1,6 +1,7 @@
 package com.eggp.service;
 
 import com.eggp.model.Customer;
+import com.eggp.smart.annotation.Transaction;
 import com.eggp.util.DatabaseUtil;
 import com.eggp.util.PropertiesUtil;
 import org.slf4j.Logger;
@@ -66,6 +67,7 @@ public class CustomerService {
      * @param fieldMap
      * @return
      */
+    @Transaction
     public boolean createCustomer(Map<String,Object> fieldMap){
         return DatabaseUtil.insertEntity(Customer.class,fieldMap);
     }
@@ -76,6 +78,7 @@ public class CustomerService {
      * @param fieldMap
      * @return
      */
+    @Transaction
     public boolean updateCustomer(long id,Map<String,Object> fieldMap){
         return DatabaseUtil.updateEntity(Customer.class,id,fieldMap);
     }
@@ -85,6 +88,7 @@ public class CustomerService {
      * @param id
      * @return
      */
+    @Transaction
     public boolean deleteCustomer(long id){
         return DatabaseUtil.deleteEntity(Customer.class,id);
     }

@@ -9,6 +9,12 @@ public class JsonUtil {
 
     private static final ObjectMapper OBJECT_MAPPER=new ObjectMapper();
 
+    /**
+     * 将POJO转为JSON
+     * @param obj
+     * @param <T>
+     * @return
+     */
     public static <T> String toJson(T obj){
         String json;
         try{
@@ -20,6 +26,13 @@ public class JsonUtil {
         return json;
     }
 
+    /**
+     * 将JSON转为POJO
+     * @param json
+     * @param type
+     * @param <T>
+     * @return
+     */
     public static <T> T fromJson(String json,Class<T> type){
         T pojo;
         try {

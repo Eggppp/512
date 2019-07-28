@@ -7,10 +7,7 @@ package com.eggp.model;
 public class Customer {
 
     private long id;
-    // 姓名
     private String name;
-    // 昵称
-    private String alias;
     // 联系人
     private String contact;
     private String telephone;
@@ -32,14 +29,6 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
     }
 
     public String getContact() {
@@ -80,7 +69,6 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", alias='" + alias + '\'' +
                 ", contact='" + contact + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +

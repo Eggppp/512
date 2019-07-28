@@ -1,0 +1,22 @@
+# idea文件
+.idea/
+.idea/*
+.DS_Store
+*.iml
+*/output/
+*/target/
+*/issue.info
+logs/
+output
+target
+*.log
+logging.log_file*
+.gitattributes
+tree.txt
+.settings
+.classpath
+.project
+**/node_modules/
+**/dist/
+**/package-lock.json
+*/.history/

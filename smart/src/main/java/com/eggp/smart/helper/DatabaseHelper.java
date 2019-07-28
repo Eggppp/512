@@ -1,6 +1,8 @@
-package com.eggp.util;
+package com.eggp.smart.helper;
 
-import com.sun.org.apache.bcel.internal.generic.DASTORE;
+
+import com.eggp.smart.util.CollectionUtil;
+import com.eggp.smart.util.PropertiesUtil;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -13,7 +15,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,9 @@ import java.util.Properties;
 /**
  * 数据库工具类
  */
-public final class DatabaseUtil {
+public final class DatabaseHelper {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseHelper.class);
 
     private static final QueryRunner QUERY_RUNNER;
 
@@ -38,7 +39,7 @@ public final class DatabaseUtil {
         CONNECTION_HOLDER = new ThreadLocal<Connection>();
         QUERY_RUNNER=new QueryRunner();
 
-        Properties conf=PropertiesUtil.loadProperties("src/main/resources/dbconfig.properties");
+        Properties conf= PropertiesUtil.loadProperties("src/main/resources/dbconfig.properties");
         String driver=conf.getProperty("jdbc.driver");
         String url=conf.getProperty("jdbc.url");
         String username=conf.getProperty("jdbc.username");
@@ -131,7 +132,7 @@ public final class DatabaseUtil {
      * @param params
      * @return
      */
-    public static List<Map<String,Object>> executeQuery(String sql,Object...params){
+    public static List<Map<String,Object>> executeQuery(String sql, Object...params){
         List<Map<String,Object>> result;
         try {
             Connection connection=getConnection();
@@ -244,7 +245,7 @@ public final class DatabaseUtil {
         try {
             String sql;
             while ((sql=bufferedReader.readLine())!=null){
-                DatabaseUtil.executeUpdate(sql);
+                DatabaseHelper.executeUpdate(sql);
             }
         }catch (Exception e){
             LOGGER.error("execute sql file failure",e);

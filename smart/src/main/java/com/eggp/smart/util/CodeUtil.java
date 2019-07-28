@@ -12,6 +12,11 @@ import java.net.URLEncoder;
 public class CodeUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(CodeUtil.class);
 
+    /**
+     * 将URL编码
+     * @param source
+     * @return
+     */
     public static String encodeURL(String source){
         String target;
         try{
@@ -23,6 +28,12 @@ public class CodeUtil {
         return target;
     }
 
+
+    /**
+     * 将URL解码
+     * @param source
+     * @return
+     */
     public static String decodeURL(String source){
         String target;
         try{

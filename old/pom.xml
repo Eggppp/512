@@ -91,6 +91,12 @@
             <version>2.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.eggpp</groupId>
+            <artifactId>smart</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
 
     </dependencies>
 
